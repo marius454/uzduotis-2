@@ -5,14 +5,14 @@
 int main ()
 {
     std::string vp;
-    int n,egz,sum=0,a,b;
+    int n,egz,a,b=0;
     double galBalas;
+    std::vector<int> paz;
     std::cout<<"iveskite mokinio/studento varda ir pavarde: ";
     getline (std::cin,vp);
-    std::cout<<"iveskite kiek pazymiu bus vedama: "; std::cin>>n;
-    std::vector<int> paz;
-    std::cout<<"iveskite visus "<<n<<" namu darbu pazymius: "<<std::endl;
-    for (int i=0;i<n;i++)
+
+    std::cout<<"iveskite visus namu darbu pazymius: "<<std::endl;
+    while (b!=-1)
     {
         std::cin>>b;
         paz.push_back(b);
@@ -20,8 +20,8 @@ int main ()
     std::cout<<"iveskite mokinio/studento egzamino pazymi: ";
     std::cin>>egz;
     std::cout<<std::endl;
-    for (int i=0; i<n; i++)
-        for (int j=i; j<n; j++)
+    for (unsigned int i=0; i<paz.size()-1; i++)
+        for (unsigned int j=i; j<paz.size()-1; j++)
         {
             a=0;
             if (paz.at(j)<paz.at(i))
@@ -31,11 +31,11 @@ int main ()
                     paz.at(j)=a;
                 }
         }
-    if (n%2!=0)
-        galBalas=0.4*paz.at(n/2)+0.6*egz;
+    if ((paz.size()-1)%2!=0)
+        galBalas=0.4*paz.at((paz.size()-1)/2)+0.6*egz;
     else
     {
-        double med=(paz.at(n/2-1)+paz.at(n/2))/2;
+        double med=(paz.at((paz.size()-1)/2-1)+paz.at((paz.size()-1)/2))/2;
         galBalas=0.4*med+0.6*egz;
     }
 
