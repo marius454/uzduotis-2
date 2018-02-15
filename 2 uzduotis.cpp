@@ -5,10 +5,12 @@
 int main ()
 {
     std::string vp;
-    int n=6,paz[100],egz,sum=0,a;
+    int n,egz,sum=0,a;
     double galBalas;
     std::cout<<"iveskite mokinio/studento varda ir pavarde: ";
     getline (std::cin,vp);
+    std::cout<<"iveskite kiek pazymiu bus vedama: "; std::cin>>n;
+    int paz[n];
     std::cout<<"iveskite visus "<<n<<" namu darbu pazymius: "<<std::endl;
     for (int i=0;i<n;i++)
     {
@@ -16,7 +18,7 @@ int main ()
     }
     std::cout<<"iveskite mokinio/studento egzamino pazymi: ";
     std::cin>>egz;
-    std::cout>>endl;
+    std::cout<<std::endl;
     for (int i=0; i<n; i++)
         for (int j=i; j<n; j++)
         {
