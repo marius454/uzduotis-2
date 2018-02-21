@@ -2,6 +2,7 @@
 #include <cmath>
 #include <iomanip>
 #include <vector>
+#include <random>
 int main()
 {
 	std::string vp;
